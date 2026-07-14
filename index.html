@@ -29,6 +29,8 @@
     --shadow-hover: 0 8px 30px rgba(111,78,55,0.22);
     --radius: 16px;
     --radius-sm: 10px;
+    --cash-color: #27AE60;
+    --upi-color: #6C63FF;
   }
 
   body {
@@ -66,32 +68,6 @@
     letter-spacing: 0.5px;
   }
 
-  .topbar-right {
-    display: flex;
-    gap: 8px;
-  }
-
-  .icon-btn {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 10px;
-    color: white;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 0.2s;
-    backdrop-filter: blur(4px);
-  }
-
-  .icon-btn:active {
-    transform: scale(0.92);
-    background: rgba(255,255,255,0.25);
-  }
-
   /* ─── NAV TABS ─── */
   .nav-tabs {
     background: white;
@@ -120,9 +96,7 @@
     gap: 3px;
   }
 
-  .nav-tab .tab-icon {
-    font-size: 18px;
-  }
+  .nav-tab .tab-icon { font-size: 18px; }
 
   .nav-tab.active {
     color: var(--primary);
@@ -138,9 +112,7 @@
     animation: fadeIn 0.25s ease;
   }
 
-  .page.active {
-    display: block;
-  }
+  .page.active { display: block; }
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(6px); }
@@ -167,139 +139,6 @@
     background: var(--border);
   }
 
-  /* ─── PRODUCT GRID (MANAGE) ─── */
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-
-  .product-card {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
-    transition: all 0.25s;
-    position: relative;
-  }
-
-  .product-card:active {
-    transform: scale(0.97);
-  }
-
-  .product-img-wrap {
-    width: 100%;
-    height: 120px;
-    background: linear-gradient(135deg, #F5ECD7, #EDD9B8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .product-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .product-img-wrap .emoji-placeholder {
-    font-size: 52px;
-    line-height: 1;
-  }
-
-  .product-info {
-    padding: 10px 10px 8px;
-  }
-
-  .product-name {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 4px;
-    line-height: 1.3;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .product-price {
-    font-size: 15px;
-    font-weight: 800;
-    color: var(--primary);
-  }
-
-  .product-price span {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--text-light);
-  }
-
-  .product-delete-btn {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    background: rgba(231,76,60,0.85);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px);
-    transition: all 0.2s;
-  }
-
-  .product-delete-btn:active {
-    transform: scale(0.88);
-  }
-
-  /* ─── ADD ITEM CARD ─── */
-  .add-item-card {
-    background: linear-gradient(135deg, #FFF8F0, #FFF0DC);
-    border: 2px dashed var(--accent);
-    border-radius: var(--radius);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 180px;
-    cursor: pointer;
-    transition: all 0.25s;
-    gap: 8px;
-  }
-
-  .add-item-card:active {
-    transform: scale(0.96);
-    background: linear-gradient(135deg, #FFF0DC, #FFE4B5);
-  }
-
-  .add-item-card .plus-icon {
-    font-size: 36px;
-    color: var(--accent);
-    line-height: 1;
-  }
-
-  .add-item-card p {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--primary);
-  }
-
-  .add-item-card small {
-    font-size: 11px;
-    color: var(--text-light);
-    text-align: center;
-    padding: 0 10px;
-  }
-
   /* ─── BILLING GRID ─── */
   .billing-grid {
     display: grid;
@@ -315,7 +154,6 @@
     box-shadow: var(--shadow);
     border: 2px solid var(--border);
     transition: all 0.2s;
-    position: relative;
   }
 
   .billing-card.has-items {
@@ -325,27 +163,16 @@
 
   .billing-img-wrap {
     width: 100%;
-    height: 90px;
-    background: linear-gradient(135deg, #F5ECD7, #EDD9B8);
+    height: 80px;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    font-size: 40px;
+    line-height: 1;
   }
 
-  .billing-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .billing-img-wrap .emoji-sm {
-    font-size: 38px;
-  }
-
-  .billing-body {
-    padding: 8px 10px;
-  }
+  .billing-body { padding: 8px 10px; }
 
   .billing-name {
     font-size: 12px;
@@ -381,19 +208,9 @@
     line-height: 1;
   }
 
-  .qty-btn.minus {
-    background: var(--border);
-    color: var(--text);
-  }
-
-  .qty-btn.plus {
-    background: var(--primary);
-    color: white;
-  }
-
-  .qty-btn:active {
-    transform: scale(0.85);
-  }
+  .qty-btn.minus { background: var(--border); color: var(--text); }
+  .qty-btn.plus  { background: var(--primary); color: white; }
+  .qty-btn:active { transform: scale(0.85); }
 
   .qty-num {
     font-size: 16px;
@@ -448,7 +265,7 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    max-height: 120px;
+    max-height: 110px;
     overflow-y: auto;
   }
 
@@ -459,7 +276,7 @@
     opacity: 0.9;
   }
 
-  /* ─── ACTION BUTTONS ─── */
+  /* ─── BUTTONS ─── */
   .action-row {
     display: flex;
     gap: 10px;
@@ -482,9 +299,7 @@
     letter-spacing: 0.3px;
   }
 
-  .btn:active {
-    transform: scale(0.96);
-  }
+  .btn:active { transform: scale(0.96); }
 
   .btn-primary {
     background: linear-gradient(135deg, var(--primary), var(--primary-light));
@@ -519,6 +334,69 @@
   .btn-full {
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  .btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* ─── PAYMENT METHOD SELECTOR ─── */
+  .payment-method-section {
+    margin-bottom: 16px;
+  }
+
+  .payment-method-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .payment-method-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  .payment-method-btn {
+    flex: 1;
+    padding: 14px 10px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border);
+    background: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+    color: var(--text-light);
+  }
+
+  .payment-method-btn .pm-icon { font-size: 26px; }
+  .payment-method-btn .pm-label { font-size: 13px; font-weight: 800; }
+
+  .payment-method-btn:active { transform: scale(0.96); }
+
+  .payment-method-btn.selected-cash {
+    border-color: var(--cash-color);
+    background: linear-gradient(135deg, #F0FFF4, #E8F8EF);
+    color: var(--cash-color);
+    box-shadow: 0 4px 14px rgba(39,174,96,0.25);
+  }
+
+  .payment-method-btn.selected-upi {
+    border-color: var(--upi-color);
+    background: linear-gradient(135deg, #F3F0FF, #EAE6FF);
+    color: var(--upi-color);
+    box-shadow: 0 4px 14px rgba(108,99,255,0.25);
   }
 
   /* ─── MODAL ─── */
@@ -575,57 +453,83 @@
     text-align: center;
   }
 
-  /* ─── PHOTO PICKER ─── */
-  .photo-picker {
-    width: 100%;
-    height: 180px;
-    background: linear-gradient(135deg, #FFF8F0, #FFF0DC);
-    border: 2px dashed var(--accent);
+  /* ─── QR MODAL ─── */
+  .qr-modal-inner { text-align: center; }
+
+  .total-display {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
     border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .total-display h3 { font-size: 13px; opacity: 0.8; margin-bottom: 4px; }
+  .total-display .amount { font-size: 36px; font-weight: 900; }
+
+  .total-display .bill-items-preview {
+    font-size: 11px;
+    opacity: 0.75;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .qr-placeholder {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .qr-placeholder img { width: 100%; height: 100%; object-fit: contain; }
+
+  .qr-no-image { text-align: center; padding: 16px; }
+  .qr-no-image .qr-icon { font-size: 56px; margin-bottom: 8px; }
+  .qr-no-image p { font-size: 12px; color: var(--text-light); }
+
+  /* ─── ICON PICKER GRID ─── */
+  .icon-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .icon-option {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 4px;
     cursor: pointer;
-    margin-bottom: 16px;
-    overflow: hidden;
-    position: relative;
     transition: all 0.2s;
+    padding: 8px 4px;
   }
 
-  .photo-picker:active { transform: scale(0.98); }
+  .icon-option:active { transform: scale(0.92); }
 
-  .photo-picker img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .icon-option.selected {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, #FFF8F0, #FFE8CC);
+    box-shadow: 0 0 0 3px rgba(111,78,55,0.15);
   }
 
-  .photo-picker-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--primary);
-    z-index: 1;
-  }
+  .icon-option .icon-emoji { font-size: 28px; line-height: 1; }
+  .icon-option .icon-name  { font-size: 9px; font-weight: 700; color: var(--text-light); text-align: center; }
 
-  .photo-picker-sub {
-    font-size: 11px;
-    color: var(--text-light);
-    z-index: 1;
-  }
-
-  .photo-picker .camera-icon {
-    font-size: 36px;
-    z-index: 1;
-  }
-
-  /* ─── FORM ELEMENTS ─── */
-  .form-group {
-    margin-bottom: 16px;
-  }
+  /* ─── FORM ─── */
+  .form-group { margin-bottom: 16px; }
 
   .form-label {
     display: block;
@@ -652,64 +556,93 @@
 
   .form-input:focus { border-color: var(--primary); }
 
-  /* ─── QR MODAL ─── */
-  .qr-modal-inner { text-align: center; }
-
-  .total-display {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    color: white;
-    border-radius: var(--radius);
-    padding: 16px;
+  /* ─── PRODUCT GRID (MANAGE) ─── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     margin-bottom: 20px;
   }
 
-  .total-display h3 {
-    font-size: 13px;
-    opacity: 0.8;
-    margin-bottom: 4px;
-  }
-
-  .total-display .amount {
-    font-size: 36px;
-    font-weight: 900;
-  }
-
-  .total-display .bill-items-preview {
-    font-size: 11px;
-    opacity: 0.75;
-    margin-top: 6px;
-    line-height: 1.5;
-  }
-
-  .qr-placeholder {
-    width: 220px;
-    height: 220px;
-    background: white;
-    border: 2px solid var(--border);
+  .product-card {
+    background: var(--card-bg);
     border-radius: var(--radius);
-    margin: 0 auto 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    position: relative;
+    transition: all 0.25s;
+  }
+
+  .product-card:active { transform: scale(0.97); }
+
+  .product-img-wrap {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 50px;
+    line-height: 1;
+  }
+
+  .product-info { padding: 10px 10px 8px; }
+
+  .product-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    white-space: nowrap;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    text-overflow: ellipsis;
   }
 
-  .qr-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  .product-price { font-size: 15px; font-weight: 800; color: var(--primary); }
+  .product-price span { font-size: 11px; font-weight: 500; color: var(--text-light); }
+
+  .product-delete-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(231,76,60,0.85);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
   }
 
-  .qr-no-image {
-    text-align: center;
-    padding: 20px;
+  .product-delete-btn:active { transform: scale(0.88); }
+
+  /* ─── ADD ITEM CARD ─── */
+  .add-item-card {
+    background: linear-gradient(135deg, #FFF8F0, #FFF0DC);
+    border: 2px dashed var(--accent);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    cursor: pointer;
+    transition: all 0.25s;
+    gap: 8px;
   }
 
-  .qr-no-image .qr-icon { font-size: 64px; margin-bottom: 8px; }
-  .qr-no-image p { font-size: 13px; color: var(--text-light); }
+  .add-item-card:active { transform: scale(0.96); }
+  .add-item-card .plus-icon { font-size: 36px; color: var(--accent); }
+  .add-item-card p { font-size: 13px; font-weight: 700; color: var(--primary); }
+  .add-item-card small { font-size: 11px; color: var(--text-light); }
 
-  /* ─── REPORTS PAGE ─── */
+  /* ─── REPORTS ─── */
   .report-card {
     background: var(--card-bg);
     border-radius: var(--radius);
@@ -729,22 +662,17 @@
   .report-header h3 { font-size: 15px; font-weight: 700; }
 
   .badge {
-    background: var(--primary);
-    color: white;
     padding: 3px 10px;
     border-radius: 20px;
     font-size: 11px;
     font-weight: 700;
+    color: white;
+    background: var(--primary);
   }
 
   .badge.green  { background: var(--success); }
-  .badge.orange { background: var(--accent); }
 
-  .report-stat-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
+  .report-stat-row { display: flex; gap: 10px; margin-bottom: 10px; }
 
   .stat-box {
     flex: 1;
@@ -754,12 +682,7 @@
     text-align: center;
   }
 
-  .stat-box .stat-val {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--primary);
-  }
-
+  .stat-box .stat-val { font-size: 18px; font-weight: 800; color: var(--primary); }
   .stat-box .stat-label {
     font-size: 10px;
     color: var(--text-light);
@@ -770,11 +693,7 @@
   }
 
   /* ─── TRANSACTION LIST ─── */
-  .transaction-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .transaction-list { display: flex; flex-direction: column; gap: 8px; }
 
   .transaction-item {
     background: var(--bg);
@@ -790,30 +709,11 @@
     margin-bottom: 6px;
   }
 
-  .t-time {
-    font-size: 12px;
-    color: var(--text-light);
-    font-weight: 600;
-  }
+  .t-time    { font-size: 12px; color: var(--text-light); font-weight: 600; }
+  .t-bill-no { font-size: 10px; color: var(--text-light); margin-top: 1px; }
+  .t-amount  { font-size: 18px; font-weight: 900; color: var(--primary); }
 
-  .t-bill-no {
-    font-size: 10px;
-    color: var(--text-light);
-    margin-top: 1px;
-  }
-
-  .t-amount {
-    font-size: 18px;
-    font-weight: 900;
-    color: var(--primary);
-  }
-
-  .t-items-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 4px;
-  }
+  .t-items-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
 
   .t-item-chip {
     background: white;
@@ -825,16 +725,26 @@
     color: var(--text);
   }
 
-  /* ─── EMPTY STATE ─── */
-  .empty-state {
-    text-align: center;
-    padding: 40px 20px;
-    color: var(--text-light);
+  .t-payment-badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-top: 6px;
+    display: inline-block;
   }
 
-  .empty-state .empty-icon { font-size: 56px; margin-bottom: 12px; }
-  .empty-state p  { font-size: 14px; font-weight: 600; }
-  .empty-state small { font-size: 12px; margin-top: 4px; display: block; }
+  .t-payment-badge.cash {
+    background: #E8F8EF;
+    color: var(--cash-color);
+    border: 1px solid #A8DFC0;
+  }
+
+  .t-payment-badge.upi {
+    background: #EEE8FF;
+    color: var(--upi-color);
+    border: 1px solid #C5B8FF;
+  }
 
   /* ─── FILTER ROW ─── */
   .filter-row {
@@ -864,7 +774,7 @@
     color: white;
   }
 
-  /* ─── SETTINGS PAGE ─── */
+  /* ─── SETTINGS ─── */
   .settings-section {
     background: var(--card-bg);
     border-radius: var(--radius);
@@ -888,7 +798,7 @@
   .settings-item:active { background: var(--bg); }
 
   .settings-icon {
-    font-size: 24px;
+    font-size: 22px;
     width: 44px;
     height: 44px;
     background: var(--bg);
@@ -932,17 +842,12 @@
     transition: height 0.6s cubic-bezier(0.34,1.56,0.64,1);
   }
 
-  .chart-bar-label {
-    font-size: 9px;
-    color: var(--text-light);
-    font-weight: 600;
-    text-align: center;
-  }
+  .chart-bar-label { font-size: 9px; color: var(--text-light); font-weight: 600; }
 
   /* ─── QR UPLOAD ─── */
   .qr-upload-area {
     width: 100%;
-    height: 180px;
+    height: 160px;
     background: linear-gradient(135deg, #F0F8FF, #E8F4FD);
     border: 2px dashed #4A90D9;
     border-radius: var(--radius);
@@ -966,6 +871,17 @@
     padding: 8px;
   }
 
+  /* ─── EMPTY STATE ─── */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-light);
+  }
+
+  .empty-state .empty-icon { font-size: 56px; margin-bottom: 12px; }
+  .empty-state p  { font-size: 14px; font-weight: 600; }
+  .empty-state small { font-size: 12px; margin-top: 4px; display: block; }
+
   /* ─── TOAST ─── */
   .toast {
     position: fixed;
@@ -987,16 +903,12 @@
     text-align: center;
   }
 
-  .toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   /* ─── RESPONSIVE ─── */
   @media (min-width: 420px) {
-    .product-grid, .billing-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .product-grid, .billing-grid { grid-template-columns: repeat(3, 1fr); }
+    .icon-picker-grid { grid-template-columns: repeat(5, 1fr); }
   }
 
   ::-webkit-scrollbar { width: 4px; height: 4px; }
@@ -1012,20 +924,18 @@
     <h1 id="shopNameDisplay">☕ Unavu Vilai</h1>
     <p id="shopTaglineDisplay">Freshly Served, Always Warm</p>
   </div>
-  <div class="topbar-right">
-    <div class="icon-btn" onclick="showPage('settings')">⚙️</div>
-  </div>
 </div>
 
 <!-- ─── NAV TABS ─── -->
+<!-- ORDER: Bill Now → Items → Reports → Settings -->
 <div class="nav-tabs">
-  <div class="nav-tab active" onclick="showPage('manage')" id="tab-manage">
-    <span class="tab-icon">🛒</span>
-    <span>Items</span>
-  </div>
-  <div class="nav-tab" onclick="showPage('billing')" id="tab-billing">
+  <div class="nav-tab active" onclick="showPage('billing')" id="tab-billing">
     <span class="tab-icon">🧾</span>
     <span>Bill Now</span>
+  </div>
+  <div class="nav-tab" onclick="showPage('manage')" id="tab-manage">
+    <span class="tab-icon">🛒</span>
+    <span>Items</span>
   </div>
   <div class="nav-tab" onclick="showPage('reports')" id="tab-reports">
     <span class="tab-icon">📊</span>
@@ -1038,22 +948,9 @@
 </div>
 
 <!-- ══════════════════════════════════ -->
-<!-- PAGE: MANAGE ITEMS                 -->
+<!-- PAGE: BILLING  (FIRST)             -->
 <!-- ══════════════════════════════════ -->
-<div class="page active" id="page-manage">
-  <div class="section-title">Menu Items</div>
-  <div class="product-grid" id="productGrid"></div>
-  <div class="add-item-card" onclick="openAddItemModal()">
-    <div class="plus-icon">＋</div>
-    <p>Add New Item</p>
-    <small>Tap to take a photo &amp; set price</small>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════ -->
-<!-- PAGE: BILLING                      -->
-<!-- ══════════════════════════════════ -->
-<div class="page" id="page-billing">
+<div class="page active" id="page-billing">
 
   <div class="cart-summary">
     <h3>Total Bill</h3>
@@ -1072,7 +969,20 @@
 </div>
 
 <!-- ══════════════════════════════════ -->
-<!-- PAGE: REPORTS                      -->
+<!-- PAGE: MANAGE ITEMS  (SECOND)       -->
+<!-- ══════════════════════════════════ -->
+<div class="page" id="page-manage">
+  <div class="section-title">Menu Items</div>
+  <div class="product-grid" id="productGrid"></div>
+  <div class="add-item-card" onclick="openAddItemModal()">
+    <div class="plus-icon">＋</div>
+    <p>Add New Item</p>
+    <small>Choose icon &amp; set price</small>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- PAGE: REPORTS  (THIRD)             -->
 <!-- ══════════════════════════════════ -->
 <div class="page" id="page-reports">
 
@@ -1102,6 +1012,19 @@
         <div class="stat-label">Avg Bill</div>
       </div>
     </div>
+
+    <!-- Cash vs UPI split -->
+    <div class="report-stat-row">
+      <div class="stat-box" style="border:1px solid #A8DFC0;">
+        <div class="stat-val" style="color:var(--cash-color);" id="statCash">₹0</div>
+        <div class="stat-label">💵 Cash</div>
+      </div>
+      <div class="stat-box" style="border:1px solid #C5B8FF;">
+        <div class="stat-val" style="color:var(--upi-color);" id="statUPI">₹0</div>
+        <div class="stat-label">📱 UPI</div>
+      </div>
+    </div>
+
     <div class="section-title" style="margin-top:8px;">Last 7 Days</div>
     <div class="chart-wrap" id="salesChart"></div>
   </div>
@@ -1124,7 +1047,7 @@
 </div>
 
 <!-- ══════════════════════════════════ -->
-<!-- PAGE: SETTINGS                     -->
+<!-- PAGE: SETTINGS  (FOURTH)           -->
 <!-- ══════════════════════════════════ -->
 <div class="page" id="page-settings">
 
@@ -1174,33 +1097,31 @@
       <div class="settings-icon">ℹ️</div>
       <div class="settings-text">
         <h4>Unavu Vilai Billing App</h4>
-        <p>Version 1.1 • All data stored locally</p>
+        <p>Version 1.2 • All data stored locally</p>
       </div>
     </div>
   </div>
 </div>
 
 <!-- ══════════════════════════════════ -->
-<!-- MODAL: ADD ITEM                    -->
+<!-- MODAL: ADD ITEM  (icon picker)     -->
 <!-- ══════════════════════════════════ -->
 <div class="modal-overlay" id="addItemModal">
   <div class="modal">
     <div class="modal-handle"></div>
     <div class="modal-title">Add New Item</div>
 
-    <div class="photo-picker" id="photoPicker" onclick="triggerPhotoInput()">
-      <span class="camera-icon">📷</span>
-      <span class="photo-picker-label">Take / Choose Photo</span>
-      <span class="photo-picker-sub">Tap to open camera or gallery</span>
+    <div class="form-group">
+      <label class="form-label">Choose an Icon</label>
+      <div class="icon-picker-grid" id="iconPickerGrid"></div>
     </div>
-    <input type="file" id="photoInput" accept="image/*" capture="environment"
-           style="display:none" onchange="handlePhotoSelect(event)">
 
     <div class="form-group">
       <label class="form-label">Item Name</label>
       <input type="text" class="form-input" id="newItemName"
              placeholder="e.g. Masala Tea" maxlength="30">
     </div>
+
     <div class="form-group">
       <label class="form-label">Price (₹)</label>
       <input type="number" class="form-input" id="newItemPrice"
@@ -1237,8 +1158,28 @@
         Show this QR to the customer to collect payment
       </p>
 
-      <button class="btn btn-success btn-full" onclick="confirmPayment()">✅ Payment Received</button>
-      <button class="btn btn-outline  btn-full" onclick="closeModal('qrModal')">Back to Bill</button>
+      <!-- ── PAYMENT METHOD SELECTOR ── -->
+      <div class="payment-method-section">
+        <div class="payment-method-label">Select Payment Method</div>
+        <div class="payment-method-row">
+          <button class="payment-method-btn" id="cashBtn" onclick="selectPaymentMethod('Cash')">
+            <span class="pm-icon">💵</span>
+            <span class="pm-label">Cash</span>
+          </button>
+          <button class="payment-method-btn" id="upiBtn" onclick="selectPaymentMethod('UPI')">
+            <span class="pm-icon">📱</span>
+            <span class="pm-label">UPI</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn btn-success btn-full" id="paymentReceivedBtn"
+              onclick="confirmPayment()" disabled>
+        ✅ Payment Received
+      </button>
+      <button class="btn btn-outline btn-full" onclick="closeModal('qrModal')">
+        Back to Bill
+      </button>
     </div>
   </div>
 </div>
@@ -1289,10 +1230,58 @@
 <!-- ─── TOAST ─── -->
 <div class="toast" id="toast"></div>
 
-<!-- ══════════════════════════════════════════════ -->
-<!-- JAVASCRIPT                                      -->
-<!-- ══════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════ -->
+<!-- JAVASCRIPT                                          -->
+<!-- ══════════════════════════════════════════════════ -->
 <script>
+
+/* ══════════════════════════════════════
+   BAKERY / TEA SHOP ICON CATALOGUE
+   Each entry: { emoji, label }
+══════════════════════════════════════ */
+const ICON_CATALOGUE = [
+  { emoji:'🍵', label:'Tea' },
+  { emoji:'☕', label:'Coffee' },
+  { emoji:'🫖', label:'Teapot' },
+  { emoji:'🥤', label:'Cold Drink' },
+  { emoji:'🧋', label:'Bubble Tea' },
+  { emoji:'🍹', label:'Juice' },
+  { emoji:'🧃', label:'Box Juice' },
+  { emoji:'🥛', label:'Milk' },
+  { emoji:'🍰', label:'Cake Slice' },
+  { emoji:'🎂', label:'Cake' },
+  { emoji:'🧁', label:'Cupcake' },
+  { emoji:'🍞', label:'Bread' },
+  { emoji:'🥐', label:'Croissant' },
+  { emoji:'🥖', label:'Baguette' },
+  { emoji:'🥨', label:'Pretzel' },
+  { emoji:'🧇', label:'Waffle' },
+  { emoji:'🥞', label:'Pancake' },
+  { emoji:'🍩', label:'Donut' },
+  { emoji:'🍪', label:'Cookie' },
+  { emoji:'🍫', label:'Chocolate' },
+  { emoji:'🍮', label:'Custard' },
+  { emoji:'🍯', label:'Honey' },
+  { emoji:'🥜', label:'Peanut' },
+  { emoji:'🌰', label:'Chestnut' },
+  { emoji:'🍌', label:'Banana' },
+  { emoji:'🍋', label:'Lemon' },
+  { emoji:'🍊', label:'Orange' },
+  { emoji:'🍓', label:'Strawberry' },
+  { emoji:'🍇', label:'Grapes' },
+  { emoji:'🥗', label:'Salad' },
+  { emoji:'🥘', label:'Curry' },
+  { emoji:'🍛', label:'Rice' },
+  { emoji:'🥙', label:'Wrap' },
+  { emoji:'🌮', label:'Taco' },
+  { emoji:'🍿', label:'Popcorn' },
+  { emoji:'🧆', label:'Falafel' },
+  { emoji:'🥚', label:'Egg' },
+  { emoji:'🍳', label:'Fried Egg' },
+  { emoji:'🧈', label:'Butter' },
+  { emoji:'🫙', label:'Jar' },
+];
+
 /* ─── STORAGE KEYS ─── */
 const SK = {
   products:     'uv_products',
@@ -1304,26 +1293,27 @@ const SK = {
 
 /* ─── DEFAULT MENU ─── */
 const DEFAULT_PRODUCTS = [
-  { id: 1, name: 'Normal Tea',    price: 10, image: '', emoji: '🍵' },
-  { id: 2, name: 'Black Tea',     price: 10, image: '', emoji: '🫖' },
-  { id: 3, name: 'Filter Coffee', price: 15, image: '', emoji: '☕' },
-  { id: 4, name: 'Black Coffee',  price: 15, image: '', emoji: '🖤' },
-  { id: 5, name: 'Green Tea',     price: 20, image: '', emoji: '🍃' },
-  { id: 6, name: 'Lemon Tea',     price: 20, image: '', emoji: '🍋' },
+  { id: 1, name: 'Normal Tea',    price: 10, emoji: '🍵' },
+  { id: 2, name: 'Black Tea',     price: 10, emoji: '🫖' },
+  { id: 3, name: 'Filter Coffee', price: 15, emoji: '☕' },
+  { id: 4, name: 'Black Coffee',  price: 15, emoji: '🖤' },
+  { id: 5, name: 'Green Tea',     price: 20, emoji: '🍃' },
+  { id: 6, name: 'Lemon Tea',     price: 20, emoji: '🍋' },
 ];
 
 /* ─── STATE ─── */
-let products     = [];
-let cart         = {};   // { productId: qty }
-let transactions = [];
-let reportFilter = 'today';
-let tempPhotoB64 = '';
-let tempQRB64    = '';
-let billCounter  = 0;    // for Bill # numbering
+let products      = [];
+let cart          = {};
+let transactions  = [];
+let reportFilter  = 'today';
+let billCounter   = 0;
+let selectedPaymentMethod = ''; // 'Cash' or 'UPI'
+let selectedIconEmoji     = ICON_CATALOGUE[0].emoji;
+let tempQRB64             = '';
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    INIT
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function init() {
   loadStorage();
   renderShopInfo();
@@ -1342,16 +1332,17 @@ function loadStorage() {
   const t = localStorage.getItem(SK.transactions);
   transactions = t ? JSON.parse(t) : [];
 
-  // Derive bill counter from existing transactions
-  billCounter = transactions.length;
+  billCounter = transactions.length > 0
+    ? Math.max(...transactions.map(x => x.billNo || 0))
+    : 0;
 }
 
 function saveProducts()     { localStorage.setItem(SK.products,     JSON.stringify(products));     }
 function saveTransactions() { localStorage.setItem(SK.transactions, JSON.stringify(transactions)); }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    SHOP INFO
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function renderShopInfo() {
   const name    = localStorage.getItem(SK.shopName)    || 'Unavu Vilai';
   const tagline = localStorage.getItem(SK.shopTagline) || 'Freshly Served, Always Warm';
@@ -1377,9 +1368,9 @@ function saveShopName() {
   showToast('✅ Shop name saved!');
 }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    QR IMAGE
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function triggerQRInput() { document.getElementById('qrFileInput').click(); }
 
 function openQRUploadModal() {
@@ -1427,9 +1418,9 @@ function updateQRStatus() {
     saved ? '✅ QR uploaded — tap to change' : 'Tap to upload your QR image';
 }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    PAGE NAVIGATION
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
@@ -1439,9 +1430,32 @@ function showPage(name) {
   if (name === 'reports') renderReports();
 }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
+   ICON PICKER
+══════════════════════════════════════ */
+function buildIconPicker() {
+  const grid = document.getElementById('iconPickerGrid');
+  grid.innerHTML = '';
+  selectedIconEmoji = ICON_CATALOGUE[0].emoji; // reset to first
+
+  ICON_CATALOGUE.forEach((item, idx) => {
+    const el = document.createElement('div');
+    el.className = 'icon-option' + (idx === 0 ? ' selected' : '');
+    el.innerHTML = `
+      <span class="icon-emoji">${item.emoji}</span>
+      <span class="icon-name">${item.label}</span>`;
+    el.onclick = () => {
+      document.querySelectorAll('.icon-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedIconEmoji = item.emoji;
+    };
+    grid.appendChild(el);
+  });
+}
+
+/* ══════════════════════════════════════
    MANAGE ITEMS — PRODUCT GRID
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function renderProductGrid() {
   const grid = document.getElementById('productGrid');
   grid.innerHTML = '';
@@ -1449,11 +1463,7 @@ function renderProductGrid() {
     const card = document.createElement('div');
     card.className = 'product-card';
     card.innerHTML = `
-      <div class="product-img-wrap">
-        ${p.image
-          ? `<img src="${p.image}" alt="${p.name}">`
-          : `<span class="emoji-placeholder">${p.emoji || '🍵'}</span>`}
-      </div>
+      <div class="product-img-wrap">${p.emoji || '🍵'}</div>
       <button class="product-delete-btn" onclick="deleteProduct(${p.id})">✕</button>
       <div class="product-info">
         <div class="product-name">${p.name}</div>
@@ -1476,53 +1486,19 @@ function deleteProduct(id) {
 
 /* ─── ADD ITEM MODAL ─── */
 function openAddItemModal() {
-  tempPhotoB64 = '';
   document.getElementById('newItemName').value  = '';
   document.getElementById('newItemPrice').value = '';
-  document.getElementById('photoInput').value   = '';
-  const picker = document.getElementById('photoPicker');
-  picker.innerHTML = `
-    <span class="camera-icon">📷</span>
-    <span class="photo-picker-label">Take / Choose Photo</span>
-    <span class="photo-picker-sub">Tap to open camera or gallery</span>`;
+  buildIconPicker();
   openModal('addItemModal');
-}
-
-function triggerPhotoInput() { document.getElementById('photoInput').click(); }
-
-function handlePhotoSelect(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    tempPhotoB64 = ev.target.result;
-    const picker = document.getElementById('photoPicker');
-    picker.innerHTML = '';
-    const img = document.createElement('img');
-    img.src = tempPhotoB64;
-    Object.assign(img.style, {
-      width:'100%', height:'100%', objectFit:'cover',
-      position:'absolute', inset:'0'
-    });
-    picker.appendChild(img);
-  };
-  reader.readAsDataURL(file);
 }
 
 function saveNewItem() {
   const name  = document.getElementById('newItemName').value.trim();
   const price = parseFloat(document.getElementById('newItemPrice').value);
-  if (!name)          { showToast('Please enter item name'); return; }
-  if (!price || price <= 0) { showToast('Please enter valid price'); return; }
+  if (!name)              { showToast('Please enter item name');   return; }
+  if (!price || price<=0) { showToast('Please enter valid price'); return; }
 
-  const emojis = ['🍵','☕','🫖','🥤','🧋','🍹','🧃','🥛','🍰','🧁','🥐','🍞'];
-  const item = {
-    id:    Date.now(),
-    name,
-    price,
-    image: tempPhotoB64,
-    emoji: emojis[Math.floor(Math.random() * emojis.length)]
-  };
+  const item = { id: Date.now(), name, price, emoji: selectedIconEmoji };
   products.push(item);
   saveProducts();
   renderProductGrid();
@@ -1531,9 +1507,9 @@ function saveNewItem() {
   showToast(`✅ "${name}" added!`);
 }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    BILLING
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function renderBillingGrid() {
   const grid = document.getElementById('billingGrid');
   grid.innerHTML = '';
@@ -1553,11 +1529,7 @@ function renderBillingGrid() {
     card.className = 'billing-card' + (qty > 0 ? ' has-items' : '');
     card.id = 'bcard-' + p.id;
     card.innerHTML = `
-      <div class="billing-img-wrap">
-        ${p.image
-          ? `<img src="${p.image}" alt="${p.name}">`
-          : `<span class="emoji-sm">${p.emoji || '🍵'}</span>`}
-      </div>
+      <div class="billing-img-wrap">${p.emoji || '🍵'}</div>
       <div class="billing-body">
         <div class="billing-name">${p.name}</div>
         <div class="qty-control">
@@ -1581,17 +1553,13 @@ function changeQty(productId, delta) {
   const qtyEl = document.getElementById('qty-' + productId);
   if (qtyEl) qtyEl.textContent = next;
 
-  const p = products.find(x => x.id === productId);
+  const p    = products.find(x => x.id === productId);
   const bpEl = document.getElementById('bprice-' + productId);
   if (bpEl) bpEl.textContent = next > 0 ? '₹' + (next * p.price) : '';
 
   const card = document.getElementById('bcard-' + productId);
   if (card) {
-    if (next > 0) {
-      card.classList.add('has-items');
-    } else {
-      card.classList.remove('has-items');
-    }
+    card.classList.toggle('has-items', next > 0);
   }
 
   updateCartSummary();
@@ -1661,21 +1629,23 @@ function getCartItems() {
   return items;
 }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    PAY NOW — QR MODAL
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function openQRModal() {
   const total = getCartTotal();
   if (total === 0) { showToast('Add items to the bill first'); return; }
 
+  // Reset payment method selection every time modal opens
+  selectedPaymentMethod = '';
+  document.getElementById('cashBtn').className = 'payment-method-btn';
+  document.getElementById('upiBtn').className  = 'payment-method-btn';
+  document.getElementById('paymentReceivedBtn').disabled = true;
+
   document.getElementById('qrTotalDisplay').textContent = '₹ ' + total;
-
-  // Show items preview inside modal
-  const items = getCartItems();
   document.getElementById('qrItemsPreview').textContent =
-    items.map(i => `${i.name} ×${i.qty}`).join('  •  ');
+    getCartItems().map(i => `${i.name} ×${i.qty}`).join('  •  ');
 
-  // QR image
   const saved = localStorage.getItem(SK.qrImage);
   const wrap  = document.getElementById('qrImageWrap');
   if (saved) {
@@ -1690,40 +1660,63 @@ function openQRModal() {
   openModal('qrModal');
 }
 
-/* ════════════════════════════════════════
-   CONFIRM PAYMENT → SAVE TRANSACTION
-════════════════════════════════════════ */
+/* ── Select Cash or UPI ── */
+function selectPaymentMethod(method) {
+  selectedPaymentMethod = method;
+
+  // Reset both buttons
+  document.getElementById('cashBtn').className = 'payment-method-btn';
+  document.getElementById('upiBtn').className  = 'payment-method-btn';
+
+  // Highlight selected
+  if (method === 'Cash') {
+    document.getElementById('cashBtn').className = 'payment-method-btn selected-cash';
+  } else {
+    document.getElementById('upiBtn').className  = 'payment-method-btn selected-upi';
+  }
+
+  // Enable the Payment Received button
+  document.getElementById('paymentReceivedBtn').disabled = false;
+}
+
+/* ══════════════════════════════════════
+   CONFIRM PAYMENT → SAVE ONE ROW
+══════════════════════════════════════ */
 function confirmPayment() {
+  if (!selectedPaymentMethod) {
+    showToast('Please select Cash or UPI');
+    return;
+  }
+
   const items = getCartItems();
   const total = getCartTotal();
   if (total === 0) { closeModal('qrModal'); return; }
 
   billCounter++;
 
-  /* ── ONE ROW PER BILL ── */
   const tx = {
-    id:        Date.now(),
-    billNo:    billCounter,
-    timestamp: new Date().toISOString(),
+    id:            Date.now(),
+    billNo:        billCounter,
+    timestamp:     new Date().toISOString(),
     total,
-    items      // array of { name, qty, price, subtotal }
+    paymentMethod: selectedPaymentMethod,   // ← stored per bill
+    items
   };
 
   transactions.push(tx);
   saveTransactions();
 
-  // Reset
   cart = {};
   renderBillingGrid();
   updateCartSummary();
   closeModal('qrModal');
-  showToast(`✅ Bill #${billCounter} saved! ₹${total}`);
+  showToast(`✅ Bill #${billCounter} saved! ₹${total} via ${selectedPaymentMethod}`);
   showPage('reports');
 }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    REPORTS
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function setReportFilter(filter, el) {
   reportFilter = filter;
   document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
@@ -1737,14 +1730,13 @@ function filterTransactions(filter) {
   const now = new Date();
   return transactions.filter(tx => {
     const d = new Date(tx.timestamp);
-    if (filter === 'today') {
-      return d.toDateString() === now.toDateString();
-    } else if (filter === 'week') {
+    if (filter === 'today') return d.toDateString() === now.toDateString();
+    if (filter === 'week')  {
       const ago = new Date(now); ago.setDate(now.getDate() - 7);
       return d >= ago;
-    } else if (filter === 'month') {
-      return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
     }
+    if (filter === 'month')
+      return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
     return true;
   });
 }
@@ -1755,9 +1747,19 @@ function renderReports() {
   const orders   = filtered.length;
   const avg      = orders > 0 ? Math.round(revenue / orders) : 0;
 
+  // Cash vs UPI split
+  const cashTotal = filtered
+    .filter(t => t.paymentMethod === 'Cash')
+    .reduce((s, t) => s + t.total, 0);
+  const upiTotal  = filtered
+    .filter(t => t.paymentMethod === 'UPI')
+    .reduce((s, t) => s + t.total, 0);
+
   document.getElementById('statRevenue').textContent = '₹' + revenue;
   document.getElementById('statOrders').textContent  = orders;
   document.getElementById('statAvg').textContent     = '₹' + avg;
+  document.getElementById('statCash').textContent    = '₹' + cashTotal;
+  document.getElementById('statUPI').textContent     = '₹' + upiTotal;
 
   renderChart();
   renderTransactionList(filtered);
@@ -1810,12 +1812,15 @@ function renderTransactionList(filtered) {
   );
 
   list.innerHTML = sorted.map(tx => {
-    const d    = new Date(tx.timestamp);
-    const time = d.toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
-    const date = d.toLocaleDateString('en-IN',  { day:'numeric', month:'short' });
+    const d     = new Date(tx.timestamp);
+    const time  = d.toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
+    const date  = d.toLocaleDateString('en-IN',  { day:'numeric', month:'short' });
     const chips = tx.items.map(i =>
       `<span class="t-item-chip">${i.name} ×${i.qty}</span>`
     ).join('');
+    const pmClass = (tx.paymentMethod || '').toLowerCase();
+    const pmLabel = tx.paymentMethod || 'Unknown';
+    const pmEmoji = pmClass === 'cash' ? '💵' : '📱';
 
     return `
       <div class="transaction-item">
@@ -1827,13 +1832,16 @@ function renderTransactionList(filtered) {
           <div class="t-amount">₹${tx.total}</div>
         </div>
         <div class="t-items-list">${chips}</div>
+        <div>
+          <span class="t-payment-badge ${pmClass}">${pmEmoji} ${pmLabel}</span>
+        </div>
       </div>`;
   }).join('');
 }
 
-/* ════════════════════════════════════════
-   CSV DOWNLOAD  ← FIXED: ONE ROW PER BILL
-════════════════════════════════════════ */
+/* ══════════════════════════════════════
+   CSV  — ONE ROW PER BILL + PAYMENT METHOD
+══════════════════════════════════════ */
 function downloadCSV() {
   if (transactions.length === 0) {
     showToast('No transactions to download');
@@ -1843,14 +1851,10 @@ function downloadCSV() {
   const shopName = localStorage.getItem(SK.shopName) || 'Unavu Vilai';
   const now      = new Date().toLocaleString('en-IN');
 
-  // ── Header rows ──
-  let csv = `Shop:,${shopName}\n`;
-  csv    += `Downloaded:,${now}\n\n`;
+  let csv  = `Shop:,${shopName}\n`;
+  csv     += `Downloaded:,${now}\n\n`;
+  csv     += 'Bill No,Date,Time,Items Ordered,Payment Method,Total Amount\n';
 
-  // ── Column headers — ONE ROW PER BILL ──
-  csv += 'Bill No,Date,Time,Items Ordered,Total Amount\n';
-
-  // ── One row per transaction ──
   const sorted = [...transactions].sort(
     (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
   );
@@ -1859,27 +1863,26 @@ function downloadCSV() {
     const d    = new Date(tx.timestamp);
     const date = d.toLocaleDateString('en-IN');
     const time = d.toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
-
-    // Combine all items into one cell: "Normal Tea x2, Lemon Tea x1"
-    const itemsSummary = tx.items
-      .map(i => `${i.name} x${i.qty}`)
-      .join(', ');
-
-    csv += `${tx.billNo || ''},"${date}","${time}","${itemsSummary}",${tx.total}\n`;
+    const itemsSummary = tx.items.map(i => `${i.name} x${i.qty}`).join(', ');
+    const pm   = tx.paymentMethod || 'Unknown';
+    csv += `${tx.billNo || ''},"${date}","${time}","${itemsSummary}","${pm}",${tx.total}\n`;
   });
 
-  // ── Footer summary ──
   const totalRevenue = transactions.reduce((s, t) => s + t.total, 0);
+  const cashTotal    = transactions.filter(t => t.paymentMethod === 'Cash').reduce((s,t) => s+t.total, 0);
+  const upiTotal     = transactions.filter(t => t.paymentMethod === 'UPI').reduce((s,t)  => s+t.total, 0);
+
   csv += `\nTotal Bills:,${transactions.length}`;
   csv += `\nTotal Revenue:,${totalRevenue}`;
+  csv += `\nCash Total:,${cashTotal}`;
+  csv += `\nUPI Total:,${upiTotal}`;
 
-  // ── Trigger download ──
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href     = url;
-  const dateStr = new Date().toLocaleDateString('en-IN').replace(/\//g, '-');
-  a.download = `${shopName.replace(/\s+/g,'_')}_sales_${dateStr}.csv`;
+  const ds   = new Date().toLocaleDateString('en-IN').replace(/\//g,'-');
+  a.download = `${shopName.replace(/\s+/g,'_')}_sales_${ds}.csv`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -1887,9 +1890,9 @@ function downloadCSV() {
   showToast('📊 CSV downloaded!');
 }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    CLEAR DATA
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function clearAllData() {
   if (!confirm('Delete ALL transaction history? This cannot be undone.')) return;
   transactions = [];
@@ -1899,9 +1902,9 @@ function clearAllData() {
   showToast('🗑 Transaction history cleared');
 }
 
-/* ════════════════════════════════════════
+/* ══════════════════════════════════════
    MODAL HELPERS
-════════════════════════════════════════ */
+══════════════════════════════════════ */
 function openModal(id)  { document.getElementById(id).classList.add('active');    }
 function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
